@@ -89,3 +89,5 @@ b64_store:
 
 b64decode_end:  
         db      "T3PS" 
+        ;append your base64 data here
+        ;terminate with printable character less than '+'
