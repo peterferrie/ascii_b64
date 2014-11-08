@@ -71,7 +71,7 @@ b64_testlwr:
 ;1e
         ;jb     b64_store
         db      72h, (02h + key1) & 0ffh
-        ;sub    al, 6 ;concatenate uppercase and lowercase
+        ;sub    al, 'a' - ('Z' + 1) ;concatenate uppercase and lowercase
 ;20
         db      2Ch, (06h + key1) & 0ffh
 b64_store:
