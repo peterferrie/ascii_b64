@@ -23,7 +23,7 @@ _decoder:
         sub     [esi + 1eh + b64decode - _decoder], bl
         sub     [esi + 20h + b64decode - _decoder], bl
         sub     [esi + 23h + b64decode - _decoder], ebx
-        sub     [esi + 24h + b64decode - _decoder], bx
+        sub     [esi + 24h + b64decode - _decoder], bl
         sub     [esi + 27h + b64decode - _decoder], ebx
         sub     [esi + 2bh + b64decode - _decoder], ebx
         sub     [esi + 2bh + b64decode - _decoder], ebx
@@ -78,7 +78,7 @@ b64_store:
         sub     al, 'A'
         ;shrd   ebx, eax, 6
 ;23, 24
-        db      (0fh + key1) & 0ffh, (0ach + key1 + key2) & 0ffh, (0c3h + 1 + key2 + key3) & 0ffh, (06h + key4) & 0ffh
+        db      (0fh + key1) & 0ffh, (0ach + key1 + key2) & 0ffh, (0c3h + key3) & 0ffh, (06h + 1 + key4) & 0ffh
         ;loop   b64_inner
 ;27
         db      (0e2h + key1) & 0ffh, (0e0h + 1 + key2) & 0ffh
